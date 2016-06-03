@@ -42,9 +42,9 @@ export class MealListComponent { // name of the class should be similar to the n
     this.selectedMeal = clickedMeal; //selectedMeal is used inside edit-meal-details tag and meal-display for changing the color
     this.onMealSelect.emit(clickedMeal); // "onMealSelect" the output of our page going to another component
   }
-  createMeal(name: string): void {
+  createMeal(name: string, details: string, calories: number): void {
   this.mealList.push(
-    new Meal(name, this.mealList.length)
+    new Meal(name, details, calories, this.mealList.length)
   );//pushing new instance of name to the mealList array by creating new obj of Meal with desc and id, and this should meet the parameters of the model constructor
   }
   onChange(filterOption) {

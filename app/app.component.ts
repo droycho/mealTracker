@@ -16,12 +16,7 @@ import { Meal } from './meal.model';
 export class AppComponent {
   public meals: Meal[]; //create public var which is instance of the model
   constructor(){
-    this.meals = [
-      // new Meal("Create To-Do List app.", 0),
-      // new Meal("Learn Kung Fu.", 1),
-      // new Meal("Rewatch all the Lord of the Rings movies.", 2),
-      // new Meal("Do the laundry.", 3)
-    ]; // this array of meals can be prefilled meals or empty
+    this.meals = []; // this array of meals can be prefilled meals or empty
   }
   mealWasSelected(clickedMeal: Meal): void {
     console.log('parent', clickedMeal);
