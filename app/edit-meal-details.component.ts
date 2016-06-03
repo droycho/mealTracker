@@ -7,14 +7,15 @@ import {Meal} from './meal.model';
   template: `
   <div class="meal-form">
     <h2>View {{meal.name}}:</h2>
-    <p>{{meal.name}}</p>
-    <p>{{meal.details}}</p>
-    <p>{{meal.calories}}</p>
+    <p>Meal Name: {{meal.name}}</p>
+    <p>Details: {{meal.details}}</p>
+    <p>Calories: {{meal.calories}} cal.</p>
+
     <h3>Edit Name: </h3>
     <input [(ngModel)]="meal.name" class="col-lg-8 input-lg meal-form">
-    <h3>Edit Details: </h3>
+    <h3>Add/Edit Details: </h3>
     <input [(ngModel)]="meal.details" class="col-lg-8 input-lg meal-form">
-    <h3>Edit Calories: </h3>
+    <h3>Add/Edit Calories: </h3>
     <input [(ngModel)]="meal.calories" class="col-lg-8 input-lg meal-form">
   </div>
   `
