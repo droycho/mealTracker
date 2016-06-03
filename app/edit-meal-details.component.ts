@@ -2,8 +2,8 @@ import {Component} from 'angular2/core';
 import {Meal} from './meal.model';
 
 @Component({
-  selector: 'edit-meal-details', //inside meal-list.component
-  inputs: ['meal'], // this comes from meal-list.component equal to selectedMeal
+  selector: 'edit-meal-details',
+  inputs: ['meal'],
   template: `
   <div class="meal-form">
     <h2>View {{meal.name}}:</h2>
@@ -21,5 +21,5 @@ import {Meal} from './meal.model';
   `
 })
 export class EditMealDetailsComponent {
-  public meal: Meal; // when we get the import of the meal we need to define the public variable within the export class
+  public meal: Meal;
 }

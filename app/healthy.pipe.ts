@@ -2,8 +2,8 @@ import {Pipe, PipeTransform} from 'angular2/core';
 import {Meal} from './meal.model';
 
 @Pipe({
-  name: "healthy", //same word after "| healthy:filterHealthy" in meal-list.component
-  pure: false // this set to false in model
+  name: "healthy",
+  pure: false
 })
 export class HealthyPipe implements PipeTransform {
   transform(input: Meal[], args) {
@@ -11,8 +11,8 @@ export class HealthyPipe implements PipeTransform {
     var desiredHealthyState = args[0];
     if(desiredHealthyState === "healthy") {
       return input.filter((meal) => {
-        if(meal.calories < 500) { // this meal is used in return statement
-        return meal.healthy;} // return to meal.component and will be checked inside the toggleHealthy
+        if(meal.calories < 500) {
+        return meal.healthy;}
       });
     } else if (desiredHealthyState === "notHealthy") {
       return input.filter((meal) => {
@@ -24,3 +24,5 @@ export class HealthyPipe implements PipeTransform {
     }
   }
 }
+
+//items will only show in healthy if check box is selected, however, will not show in unhealthy if calories are less than 500.
