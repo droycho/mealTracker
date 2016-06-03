@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
     inputs: ['meal'], // this comes from meal-list.component equal to currentMeal
   template: `
   <div>
-  <p>Select a meal blow to add details for a calorie value to the meal entry, or modify its details. If the meal has more than 500 calories, click teh box to mark it as unhealthy.</p>
+  <p>Select a meal blow to add details for a calorie value to the meal entry, or modify its details. If the meal has lass than 500 calories, click the box to mark it as healthy.</p>
     <input *ngIf="meal.healthy" type="checkbox" checked (click)="toggleHealthy(false)"/>
     <input *ngIf="!meal.healthy" type="checkbox" (click)="toggleHealthy(true)"/>
     <label>{{ meal.name }}</label>
