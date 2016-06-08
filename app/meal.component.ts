@@ -13,7 +13,7 @@ import { Meal } from './meal.model';
 
 export class MealComponent {
   public meal: Meal;
-  toggleHealthy(setState: boolean) {
-    this.meal.healthy = setState;
-  }
+  // toggleHealthy(setState: boolean) {
+  //   this.meal.healthy = setState;
+  // }
 }

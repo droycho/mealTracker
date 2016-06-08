@@ -19,6 +19,5 @@ export class AppComponent {
     this.meals = [];
   }
   mealWasSelected(clickedMeal: Meal): void {
-    console.log('parent', clickedMeal);
   }
 }
