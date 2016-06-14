@@ -36,4 +36,4 @@ export class NewMealComponent {
   }
 }
 
-//variable meal is picking up values, but it is not displaying in the target.
+//variable meal is picking up values, but it is not displaying as clickable link in the target.
