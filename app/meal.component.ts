@@ -5,15 +5,19 @@ import { Meal } from './meal.model';
     selector: 'meal-display', //this selector is located in meal-list.component
     inputs: ['meal'], // this comes from meal-list.component equal to currentMeal
   template: `
-  <div>
-    <p>{{ meal.name }}</p>
+  <div class="container">
+    <div>
+      <h3 (click)="mealClicked(meal)" [class.selected]="selectedMeal === meal">{{meal.name}}</h3>
+      <ul *ngIf="selectedMeal === meal">
+        <li>Name: {{meal.name}}</li>
+        <li>Details: {{meal.details}}</li>
+        <li>Calories: {{meal.calories}}</li>
+      </ul>
+    </div>
   </div>
   `
 })
 
 export class MealComponent {
   public meal: Meal;
-  // toggleHealthy(setState: boolean) {
-  //   this.meal.healthy = setState;
-  // }
 }

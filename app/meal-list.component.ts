@@ -1,8 +1,8 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { MealComponent } from './meal.component';
-import { Meal } from './meal.model';
-import {EditMealDetailsComponent} from './edit-meal-details.component';
 import { NewMealComponent } from './new-meal.component';
+import { Meal } from './meal.model';
+import { MealComponent } from './meal.component';
+import {EditMealDetailsComponent} from './edit-meal-details.component';
 import {HealthyPipe} from './healthy.pipe';
 
 @Component({
@@ -13,14 +13,15 @@ import {HealthyPipe} from './healthy.pipe';
   pipes: [HealthyPipe],
   template: `
   <select (change)="onChange($event.target.value)" class="filter">
-    <option value="all">Show All</option>
+    <option value="all" selected="selected">Show All</option>
     <option value="healthy">Show Healthy</option>
-    <option value="notHealthy" selected="selected">Show Not Healthy</option>
+    <option value="notHealthy">Show Not Healthy</option>
   </select>
+  <br>
   <meal-display *ngFor="#currentMeal of mealList | healthy:filterHealthy"
     (click)="mealClicked(currentMeal)"
-    [class.selected]="currentMeal === selectedMeal"
     [meal]="currentMeal">
+
   </meal-display>
   <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
   </edit-meal-details>
@@ -40,10 +41,10 @@ export class MealListComponent {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
-  createMeal(name: string, details: string, calories: number): void {
-  this.mealList.push(
-    new Meal(name, details, calories, this.mealList.length)
-  );
+  createMeal(meal: Meal): void {
+  this.mealList.push(meal);
+  console.log("added new meal");
+  console.log(this.mealList)
   }
   onChange(filterOption) {
     this.filterHealthy = filterOption;
