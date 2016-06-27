@@ -42,8 +42,6 @@ export class MealListComponent {
   }
   createMeal(meal: Meal): void {
   this.mealList.push(meal);
-  console.log("added new meal");
-  console.log(this.mealList)
   }
   onChange(filterOption) {
     this.filterHealthy = filterOption;
