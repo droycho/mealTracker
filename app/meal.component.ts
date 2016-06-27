@@ -2,8 +2,8 @@ import { Component } from 'angular2/core';
 import { Meal } from './meal.model';
 
 @Component({
-    selector: 'meal-display', //this selector is located in meal-list.component
-    inputs: ['meal'], // this comes from meal-list.component equal to currentMeal
+    selector: 'meal-display',
+    inputs: ['meal'],
   template: `
   <div class="container">
     <div>
